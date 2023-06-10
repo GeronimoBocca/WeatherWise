@@ -1,0 +1,77 @@
+.card-img {
+    width: 25%;
+    
+}
+
+.temp {
+    font-size: 5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card {
+    color: whitesmoke;
+    width: 50rem;
+    margin: auto;
+    background-color: #0d0825;
+    border: solid 1px rgba(255,255,255,.12);
+}
+
+.content {
+    background-color: #0d0825;
+    border: solid 1px #0d0625;
+}
+
+@media screen and (max-width: 1200px) {
+    .card {
+        width: 45rem;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+
+    .card {
+        width: 37rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .card {
+        width: 30rem;
+    }
+
+    .temp {
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width: 576px) {
+
+    .card {
+        width: 25rem;
+    }
+
+}
+
+@media screen and (max-width: 452px) {
+
+    .card {
+        width: 20rem;
+    }
+
+    .temp {
+        font-size: 3rem;
+    }
+
+}
+@media screen and (max-width: 375px) {
+
+    .card {
+        width: 15rem;
+    }
+
+    .temp {
+        font-size: 1.5rem;
+    }
+}

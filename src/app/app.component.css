@@ -1,0 +1,10 @@
+#container {
+    padding: 1.5rem;
+}
+
+.body {
+    background-image: image-set('assets/zyro-image.png');
+    background-size: cover;
+}
+
+

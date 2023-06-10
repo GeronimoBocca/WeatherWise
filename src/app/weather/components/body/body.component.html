@@ -1,0 +1,32 @@
+<ng-template #noData>
+    <app-card></app-card>
+</ng-template>
+
+<mat-card *ngIf="data; else noData" class="mt-3 card"> 
+    <mat-card-content>
+        <div class="grid">
+            <div class="col">
+                <mat-card class="content">
+                    <mat-card-header>
+                        <mat-card-subtitle>{{data.location.name}}, <mat-card-title>{{data.location.country}}</mat-card-title></mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-divider class="m-1"></mat-divider>
+                    <mat-card-content class="flex flex-row justify-content-between align-items-center">
+                        <img class="card-img" src="{{data.current.condition.icon}}" alt="">
+                        <strong class="temp">{{data.current.temp_c}} °C</strong>
+                        <mat-divider class="m-1"></mat-divider>
+                    </mat-card-content>
+                    <mat-card-content>
+                        <div class="grid">
+                            <div class="col-6">Feels like: <strong>{{data.current.feelslike_c}}°C</strong></div>
+                            <div class="col-6">Humidity: <strong>{{data.current.humidity}}%</strong></div>
+                            <div class="col-6">Wind: <strong>{{data.current.wind_kph}} kph, {{data.current.wind_dir}}</strong></div>
+                            <div class="col-6">Visibility: <strong>{{data.current.vis_km}} km</strong></div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+        </div>
+    </mat-card-content>
+</mat-card>
