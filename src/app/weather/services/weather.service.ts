@@ -9,7 +9,7 @@ export class WeatherService {
     constructor(private http: HttpClient) { }
 
     private apiKey = 'e0397ce049d84609b5f204000230206';
-    private baseUrl = 'http://api.weatherapi.com/v1/current.json'
+    private baseUrl = 'https://api.weatherapi.com/v1/current.json'
     public data?: Weather;
 
     getCurrentWeather(q: string): void {
