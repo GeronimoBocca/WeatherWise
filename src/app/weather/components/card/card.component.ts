@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-card',
@@ -6,6 +6,4 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./card.component.css']
 })
 
-export class CardComponent {
-
-}
+export class CardComponent { }

@@ -2,31 +2,40 @@
     <app-card></app-card>
 </ng-template>
 
-<mat-card *ngIf="data; else noData" class="mt-3 card"> 
-    <mat-card-content>
-        <div class="grid">
-            <div class="col">
-                <mat-card class="content">
-                    <mat-card-header>
-                        <mat-card-subtitle>{{data.location.name}}, <mat-card-title>{{data.location.country}}</mat-card-title></mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-divider class="m-1"></mat-divider>
-                    <mat-card-content class="flex flex-row justify-content-between align-items-center">
-                        <img class="card-img" src="{{data.current.condition.icon}}" alt="">
-                        <strong class="temp">{{data.current.temp_c}} °C</strong>
-                        <mat-divider class="m-1"></mat-divider>
-                    </mat-card-content>
-                    <mat-card-content>
-                        <div class="grid">
-                            <div class="col-6">Feels like: <strong>{{data.current.feelslike_c}}°C</strong></div>
-                            <div class="col-6">Humidity: <strong>{{data.current.humidity}}%</strong></div>
-                            <div class="col-6">Wind: <strong>{{data.current.wind_kph}} kph, {{data.current.wind_dir}}</strong></div>
-                            <div class="col-6">Visibility: <strong>{{data.current.vis_km}} km</strong></div>
-                        </div>
-                    </mat-card-content>
-                </mat-card>
-            </div>
+<div class="grid">
+    <div class="col">
+        <mat-card *ngIf="data; else noData" class="mt-3 card content">
+            <mat-card-header>
+                <mat-card-subtitle>{{location.name}}, {{location.country}}
+                </mat-card-subtitle>
+            </mat-card-header>
 
-        </div>
-    </mat-card-content>
-</mat-card>
+            <mat-divider class="m-3"></mat-divider>
+
+            <mat-card-content class="flex flex-row justify-content-around align-items-center">
+                <div class="flex flex-column justify-content-around align-items-center">
+                    <div class="flex flex-row justify-content-around align-items-center">
+                        <img class="card-img" src="{{current.condition.icon}}" alt="">
+                        <strong class="temp">{{current.temp_c | number: '1.0-0'}}°C</strong>
+                    </div>
+                    <div class="mt-3 condition"><strong>{{current.condition.text}}</strong></div>
+                </div>
+                <div>
+                    <div>Feels like: <strong>{{current.feelslike_c | number: '1.0-0'}}°C</strong></div>
+                    <div>Max temp: <strong>{{forecast.day.maxtemp_c | number: '1.0-0'}}°C</strong></div>
+                    <div>Min temp: <strong>{{forecast.day.mintemp_c | number: '1.0-0'}}°C</strong></div>
+                </div>
+            </mat-card-content>
+
+            <mat-divider class="m-3"></mat-divider>
+
+            <mat-card-content>
+                <div class="grid justify-content-between m-0">
+                    <div class="col-3 condition">Humidity: <strong>{{current.humidity}}%</strong></div>
+                    <div class="col-3 condition">Wind: <strong>{{current.wind_kph}} km/h</strong></div>
+                    <div class="col-3 condition">Visibility: <strong>{{current.vis_km}} km</strong></div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
