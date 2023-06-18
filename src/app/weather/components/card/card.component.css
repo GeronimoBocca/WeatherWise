@@ -41,16 +41,12 @@ mat-divider {
 }
 
 @media screen and (max-width: 452px) {
-
     .card {
         width: 20rem;
     }
-
 }
 @media screen and (max-width: 375px) {
-
     .card {
         width: 15rem;
     }
-
 }
